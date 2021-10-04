@@ -10,10 +10,13 @@ const App = () => {
     // num + 1のところはnumを更新したい値を入れる部分。
     setNum(num + 1);
   };
+
+  // ３の倍数で顔が出現機能をつけたら反応しなくなった。影響受けてしまった。
   const onClickSwitchShowFlag = () => {
     setFaceShowFlag(!faceShowFlag);
   };
 
+  // 他の機能に影響を与えないようにnumの値にのみ関心を寄せたい。関心の分離をしたい。そんな時にuseEffect。
   if (num > 0) {
     if (num % 3 === 0) {
       faceShowFlag || setFaceShowFlag(true);
