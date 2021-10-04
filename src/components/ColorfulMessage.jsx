@@ -6,7 +6,7 @@ const ColorfulMessage = (props) => {
     fontSize: "18px"
   };
   // {props.message}の{}はJavaScriptだから
-  return <p style={contentStyle}>{props.message}</p>;
+  return <p style={contentStyle}>{props.children}</p>;
 };
 
 export default ColorfulMessage;
