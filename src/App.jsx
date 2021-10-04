@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import ColorfulMessage from "./components/ColorfulMessage";
+import { ColorfulMessage } from "./components/ColorfulMessage";
 
 // useStateが変わると上から順に読み込む。これを再レンダリングという。
 const App = () => {
