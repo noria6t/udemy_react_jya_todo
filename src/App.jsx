@@ -20,15 +20,15 @@ const App = () => {
   // 第二引数はから配列[]の時は最初の１回処理を走らせたい時に使う。
   // useEffecrtは第二引数の値が変化した時のみ処理を走らせる。
   useEffect(() => {
-    console.log("useEffect!");
-  }, [num]);
-  if (num > 0) {
-    if (num % 3 === 0) {
-      faceShowFlag || setFaceShowFlag(true);
-    } else {
-      faceShowFlag && setFaceShowFlag(false);
+    if (num > 0) {
+      if (num % 3 === 0) {
+        faceShowFlag || setFaceShowFlag(true);
+      } else {
+        faceShowFlag && setFaceShowFlag(false);
+      }
     }
-  }
+    // eslint react-hooks/exhaustive-deps disabled
+  }, [num]);
 
   return (
     <>
