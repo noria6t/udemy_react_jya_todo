@@ -5,7 +5,7 @@ import ColorfulMessage from "./components/ColorfulMessage";
 const App = () => {
   // [num, setNum]はnumが変数、第二引数setNumはstateを変更するための関数。0は初期値。
   const [num, setNum] = useState(0);
-  const [faceShowFlag, setFaceShowFlag] = useState(true);
+  const [faceShowFlag, setFaceShowFlag] = useState(false);
   const onClickCountUp = () => {
     // num + 1のところはnumを更新したい値を入れる部分。
     setNum(num + 1);
@@ -14,10 +14,12 @@ const App = () => {
     setFaceShowFlag(!faceShowFlag);
   };
 
-  if (num % 3 === 0) {
-    setFaceShowFlag(true);
-  } else {
-    setFaceShowFlag(false);
+  if (num > 0) {
+    if (num % 3 === 0) {
+      faceShowFlag || setFaceShowFlag(true);
+    } else {
+      faceShowFlag && setFaceShowFlag(false);
+    }
   }
 
   return (
