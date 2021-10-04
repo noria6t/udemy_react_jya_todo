@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import ColorfulMessage from "./components/ColorfulMessage";
 
 // useStateが変わると上から順に読み込む。これを再レンダリングという。
@@ -17,6 +17,10 @@ const App = () => {
   };
 
   // 他の機能に影響を与えないようにnumの値にのみ関心を寄せたい。関心の分離をしたい。そんな時にuseEffect。
+  // 第二引数はから配列[]の時は最初の１回処理を走らせたい時に使う。
+  useEffect(() => {
+    console.log("useEffect!");
+  }, []);
   if (num > 0) {
     if (num % 3 === 0) {
       faceShowFlag || setFaceShowFlag(true);
