@@ -1,11 +1,12 @@
 import React from "react";
 
-const ColorfulMessage = () => {
+const ColorfulMessage = (props) => {
   const contentStyle = {
-    color: "blue",
+    color: props.color,
     fontSize: "18px"
   };
-  return <p style={contentStyle}>お元気ですか？</p>;
+  // {props.message}の{}はJavaScriptだから
+  return <p style={contentStyle}>{props.message}</p>;
 };
 
 export default ColorfulMessage;
